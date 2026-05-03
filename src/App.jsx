@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home'
 import Invitaciones from './pages/Invitaciones'
 import IsaiLupita from './pages/Invitaciones/IsaiLupita'
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css'
 
 const router = createBrowserRouter([
   {
