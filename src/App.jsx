@@ -1,5 +1,5 @@
 // import { BrowserRouter, Routes, Route } from 'react-router'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createHashRouter, RouterProvider } from 'react-router'
 
 import Home from './pages/Home'
 import Invitaciones from './pages/Invitaciones'
@@ -7,7 +7,7 @@ import IsaiLupita from './pages/Invitaciones/IsaiLupita'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.css'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Home />,
