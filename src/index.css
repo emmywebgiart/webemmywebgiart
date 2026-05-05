@@ -133,11 +133,11 @@ button {
   font-family: "Lustria", serif;
 }
 
-.section_hero, .section_album {
+.section_hero, .section_album, .section_photo {
   position: relative;
 }
 
-.section_hero:before, .section_hero:after, .section_album:before, .section_album:after {
+.section_hero:before, .section_hero:after, .section_album:before, .section_album:after, .section_photo:before, .section_photo:after {
   content: '';
   position: absolute;
   height: 100%;
@@ -160,6 +160,14 @@ button {
   background-image: linear-gradient(to top, #fff 1%, transparent 25%);
 }
 
+.section_photo:before {
+  background-image: linear-gradient(to bottom, #fff 1%, transparent 25%);
+}
+
+.section_photo:after {
+  background-image: linear-gradient(to top, #778873 1%, transparent 25%);
+}
+
 .section_album:after {
   z-index: 1;
 }
@@ -167,6 +175,26 @@ button {
 .hero_title {
   font-size: 3rem;
   color: #D4DE95;
+  position: relative;
+}
+
+.hero_title::before, .hero_title:after {
+  content: '';
+  position: absolute;
+  height: .5rem;
+  width: .5rem;
+  background-color: #D4DE95;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero_title::before {
+  left: -32px;
+}
+
+.hero_title::after {
+  right: -32px;
 }
 
 .hero_names {
@@ -200,4 +228,22 @@ button {
   height: 100%;
   background-color: #fff;
   top: 0;
+}
+
+.photo_frase_container {
+  position: relative;
+}
+
+.photo_frase_container:before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -16px;
+  top: 0;
+  background: rgb(255 255 255 / .2);
+  border: 2px solid rgb(255 255 255 / .5);
+  border-top: none;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }

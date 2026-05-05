@@ -64,8 +64,8 @@ export default function IsaiLupita () {
             <section className="section_hero" style={{background: `url(${imgPrincipal})`, width: "100%", height: "100vh", backgroundSize: "cover", backgroundPosition: "center"}}>
                 {/* <img src={imgPrincipal} alt="" style={{width: "100%"}} /> */}
                 <div className="position-relative d-flex flex-column gap-5">
-                    <div style={{padding: "32px", paddingTop: "64px"}}>
-                        <h1 className="hero_title font_great_vibes mb-0 text-center">Nuestra Boda</h1>
+                    <div className="text-center" style={{padding: "32px", paddingTop: "64px"}}>
+                        <h1 className="hero_title font_great_vibes mb-0 text-center d-inline-block">Nuestra Boda</h1>
                     </div>
                     <div className="text-center">
                         <h2 className="hero_names font_lustria" style={{fontSize: "4rem"}}>Isaí y Lupita</h2>
@@ -159,10 +159,14 @@ export default function IsaiLupita () {
                     </div>                 
                 </div>
             </section>
-            <section>
+            <section className="section_photo">
                 <img src={img2} alt="" style={{width: "100%"}} />
-                <div>
-                    <p>¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
+                <div style={{position: "absolute", top: 0, padding: 16, paddingTop: 0, zIndex: 1}}>
+                    <div className="photo_frase_container" style={{background: "rgb(255, 255, 255, .5)", backdropFilter: "blur(15px)", borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px"}}>
+                        <div style={{padding: 16, paddingLeft: 48, paddingRight: 48}}>
+                            <p className="text-center" style={{color: "#3D4127"}}>¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className="position-relative" style={{background: "#778873", padding: "16px", paddingBottom: "144px"}}>
