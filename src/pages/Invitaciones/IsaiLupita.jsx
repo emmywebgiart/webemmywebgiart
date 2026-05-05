@@ -199,8 +199,8 @@ export default function IsaiLupita () {
                         </div>
                     </article>
                 </section>
-                <div className="position-absolute" style={{bottom: "-56px", zIndex: "3", pointerEvents: "none"}}>
-                    <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
+                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)", zIndex: "3", pointerEvents: "none"}}>
+                    <img src={flores} alt="" style={{width: "100%"}} />
                 </div> 
             </section>
             <section className="section_album">
@@ -291,8 +291,8 @@ export default function IsaiLupita () {
                         <p>Elia Peña Pérez</p>
                     </article>
                 </div>
-                <div className="position-absolute" style={{bottom: "-56px"}}>
-                    <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
+                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
+                    <img src={flores} alt="" style={{width: "100%"}} />
                 </div>
             </section>
             <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
@@ -402,8 +402,8 @@ export default function IsaiLupita () {
                         </div>
                     </div>
                 </div>
-                <div className="position-absolute" style={{bottom: "-56px"}}>
-                    <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
+                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
+                    <img src={flores} alt="" style={{width: "100%"}} />
                 </div> 
             </section>
             <section style={{padding: "16px", paddingBottom: "48px"}}>
@@ -448,8 +448,8 @@ export default function IsaiLupita () {
                         </div>                    
                     </div>
                 </div> 
-                <div className="position-absolute" style={{bottom: "-56px"}}>
-                    <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
+                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
+                    <img src={flores} alt="" style={{width: "100%"}} />
                 </div>           
             </section>
             <section style={{padding: 48}}>
