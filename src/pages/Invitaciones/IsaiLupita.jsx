@@ -113,7 +113,7 @@ export default function IsaiLupita () {
                             padding: "16px",
                         }}
                         >
-                            <div className="row text-center">
+                            <div className="row text-center fw-bolder">
                                 <div className="col-3">
                                     <span style={{ fontSize: "2rem", color: "#D4DE95" }}>
                                         {days}
@@ -164,7 +164,7 @@ export default function IsaiLupita () {
                     <p>¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
                 </div>
             </section>
-            <section className="position-relative" style={{background: "#778873", padding: "16px", paddingBottom: "112px"}}>
+            <section className="position-relative" style={{background: "#778873", padding: "16px", paddingBottom: "144px"}}>
                 <div style={{padding: "32px 0"}}>
                     <h3 className="font_great_vibes text-center" style={{color: "#D4DE95", fontSize: "2.5rem"}}>Con la bendición de Dios y de nuestros padres</h3>
                 </div>
@@ -255,7 +255,7 @@ export default function IsaiLupita () {
                 </Swiper>
                 
             </section>
-            <section className="position-relative" style={{padding: "16px", paddingBottom: "32px"}}>
+            <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
                 <img src={iglesia} alt="" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", opacity: ".2", left: 0, top: 0}} />
                 <div className="position-relative" style={{padding: "32px 0"}}>
                     <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Ceremonia religiosa</h3>
@@ -275,7 +275,7 @@ export default function IsaiLupita () {
                 </div>
             </section>
             <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "112px"}}>     
+                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>     
                     <div className="section_title_container text-center" style={{padding: "32px 0"}}>
                         <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                             <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Nuestros padrinos</h3>
@@ -290,7 +290,7 @@ export default function IsaiLupita () {
                     <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
                 </div>
             </section>
-            <section className="position-relative" style={{padding: "16px", paddingBottom: "32px"}}>
+            <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
                 <img src={salon} alt="" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", opacity: ".2", left: 0, top: 0}} />
                 <div className="position-relative" style={{padding: "32px 0"}}>
                     <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Ceremonia civil y recepción</h3>
@@ -310,18 +310,96 @@ export default function IsaiLupita () {
                 </div>
             </section>
             <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "112px"}}>
+                <div style={{border: "1px solid #D4DE95", padding: "1rem", borderRadius: "1rem", paddingBottom: "144px"}}>
                     <div className="section_title_container text-center" style={{padding: "32px 0"}}>
                         <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                             <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Itinerario</h3>
                         </div>
-                    </div>                 
+                    </div>
+                    <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-white text-end">13:00 PM</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0" style={{color: "#D4DE95"}}>Ceremonia religiosa</p>
+                        </div>
+                    </div>       
+                    <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Ceremonia civil</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0 text-white">15:00 PM</p>
+                        </div>
+                    </div>
+                    <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-white text-end">16:00 PM</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0" style={{color: "#D4DE95"}}>Recepción</p>
+                        </div>
+                    </div>  
+                    <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Comida</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0 text-white">16:20 PM</p>
+                        </div>
+                    </div>   
+                    <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-white text-end">18:00 PM</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0" style={{color: "#D4DE95"}}>Momento especial de los novios</p>
+                        </div>
+                    </div> 
+                     <div className="row align-items-center position-relative">
+                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Disfruta, baila, ríe y canta con nosotros</p>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <div className="timeline_circle_container d-flex justify-content-center">
+                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            </div>
+                        </div>
+                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                            <p className="mb-0 text-white">18:30 - 24:00 HRS</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="position-absolute" style={{bottom: "-56px"}}>
                     <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
                 </div> 
             </section>
-            <section style={{padding: "16px"}}>
+            <section style={{padding: "16px", paddingBottom: "48px"}}>
                 <div style={{padding: "32px 0"}}>
                     <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Código de vestimenta</h3>
                 </div>
@@ -341,13 +419,13 @@ export default function IsaiLupita () {
                     <div className="text-center">
                         <p>Formal</p>
                         <p className="mb-0">¡Prepárense para una boda llena de colores!</p>
-                        <p>El color blanco queda reservado para la novia</p>
+                        <p className="mb-0">El color blanco queda reservado para la novia</p>
                     </div> 
                 </div>
                               
             </section>
             <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "112px"}}>
+                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>
                     <div className="section_title_container text-center" style={{padding: "32px 0"}}>
                         <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                             <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Regalos</h3>
