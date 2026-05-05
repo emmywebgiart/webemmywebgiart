@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { EffectCards } from 'swiper/modules';
+import WeddingForm from "../../components/WeddingForm";
 import imgPrincipal from "../../assets/img/invitaciones/isaiylupita/IMG_3356.jpg"
 import flor1 from "../../assets/img/invitaciones/isaiylupita/flor1.png"
 import img2 from "../../assets/img/invitaciones/isaiylupita/DSC_0118.JPG"
@@ -310,88 +311,90 @@ export default function IsaiLupita () {
                 </div>
             </section>
             <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                <div style={{border: "1px solid #D4DE95", padding: "1rem", borderRadius: "1rem", paddingBottom: "144px"}}>
+                <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>
                     <div className="section_title_container text-center" style={{padding: "32px 0"}}>
                         <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                             <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Itinerario</h3>
                         </div>
                     </div>
-                    <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-white text-end">13:00 PM</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                    <div style={{padding: "1rem"}}>                   
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-white text-end">13:00 PM</p>
+                            </div>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
+                            </div>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0" style={{color: "#D4DE95"}}>Ceremonia religiosa</p>
+                            </div>
+                        </div>       
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Ceremonia civil</p>
+                            </div>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
+                            </div>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0 text-white">15:00 PM</p>
                             </div>
                         </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0" style={{color: "#D4DE95"}}>Ceremonia religiosa</p>
-                        </div>
-                    </div>       
-                    <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Ceremonia civil</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-white text-end">16:00 PM</p>
                             </div>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0 text-white">15:00 PM</p>
-                        </div>
-                    </div>
-                    <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-white text-end">16:00 PM</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0" style={{color: "#D4DE95"}}>Recepción</p>
-                        </div>
-                    </div>  
-                    <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Comida</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0" style={{color: "#D4DE95"}}>Recepción</p>
                             </div>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0 text-white">16:20 PM</p>
-                        </div>
-                    </div>   
-                    <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-white text-end">18:00 PM</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                        </div>  
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Comida</p>
                             </div>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0" style={{color: "#D4DE95"}}>Momento especial de los novios</p>
-                        </div>
-                    </div> 
-                     <div className="row align-items-center position-relative">
-                        <div className="col-4 py-2 d-flex justify-content-end align-items-center">
-                            <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Disfruta, baila, ríe y canta con nosotros</p>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <div className="timeline_circle_container d-flex justify-content-center">
-                                <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-4 py-2 d-flex justify-content-center align-items-center">
-                            <p className="mb-0 text-white">18:30 - 24:00 HRS</p>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0 text-white">16:20 PM</p>
+                            </div>
+                        </div>   
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-white text-end">18:00 PM</p>
+                            </div>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
+                            </div>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0" style={{color: "#D4DE95"}}>Momento especial de los novios</p>
+                            </div>
+                        </div> 
+                        <div className="row align-items-center position-relative">
+                            <div className="col-4 py-2 d-flex justify-content-end align-items-center">
+                                <p className="mb-0 text-end" style={{color: "#D4DE95"}}>Disfruta, baila, ríe y canta con nosotros</p>
+                            </div>
+                            <div className="col-4 py-2 d-flex justify-content-center align-items-center">
+                                <div className="timeline_circle_container d-flex justify-content-center">
+                                    <span className="d-block" style={{height: "32px", width: "32px", background: "#fff", borderRadius: "50%"}}></span>
+                                </div>
+                            </div>
+                            <div className="col-4 py-2 d-flex align-items-center">
+                                <p className="mb-0 text-white">18:30 - 24:00 HRS</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -444,6 +447,9 @@ export default function IsaiLupita () {
                 <div className="position-absolute" style={{bottom: "-56px"}}>
                     <img src={flores} alt="" style={{width: "calc(100% - 32px)"}} />
                 </div>           
+            </section>
+            <section style={{padding: 48}}>
+                <WeddingForm />
             </section>
         </main>          
         </>
