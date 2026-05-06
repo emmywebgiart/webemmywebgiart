@@ -247,3 +247,20 @@ button {
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
+
+.flowers_separator_container {
+  bottom: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+}
+
+.flowers_separator_container img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .flowers_separator_container {
+    width: 575px;
+  }
+}

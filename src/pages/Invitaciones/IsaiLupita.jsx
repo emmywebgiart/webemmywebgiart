@@ -72,11 +72,10 @@ export default function IsaiLupita () {
                         <div style={{padding: "0 96px"}}>
                             <p className="font_lustria text-white" style={{fontSize: "0.75rem"}}>"Lo que se cuida y se pone en manos de Dios, dura toda la vida"</p>
                         </div>
-                    </div>                    
-                </div>
-                
+                    </div>
+                </div>              
             </section>
-            <section style={{padding: "16px", paddingBottom: "32px"}}>
+            <section style={{padding: "16px", paddingBottom: "48px"}}>
                 <div style={{padding: "32px 0"}}>
                     <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Save the date</h3>
                 </div>
@@ -199,8 +198,8 @@ export default function IsaiLupita () {
                         </div>
                     </article>
                 </section>
-                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)", zIndex: "3", pointerEvents: "none"}}>
-                    <img src={flores} alt="" style={{width: "100%"}} />
+                <div className="flowers_separator_container position-absolute" style={{zIndex: "3", pointerEvents: "none"}}>
+                    <img src={flores} alt="Separador flores" />
                 </div> 
             </section>
             <section className="section_album">
@@ -291,8 +290,8 @@ export default function IsaiLupita () {
                         <p>Elia Peña Pérez</p>
                     </article>
                 </div>
-                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
-                    <img src={flores} alt="" style={{width: "100%"}} />
+                <div className="flowers_separator_container position-absolute">
+                    <img src={flores} alt="Separador flores" />
                 </div>
             </section>
             <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
@@ -402,9 +401,9 @@ export default function IsaiLupita () {
                         </div>
                     </div>
                 </div>
-                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
-                    <img src={flores} alt="" style={{width: "100%"}} />
-                </div> 
+                <div className="flowers_separator_container position-absolute">
+                    <img src={flores} alt="Separador flores" />
+                </div>
             </section>
             <section style={{padding: "16px", paddingBottom: "48px"}}>
                 <div style={{padding: "32px 0"}}>
@@ -448,9 +447,9 @@ export default function IsaiLupita () {
                         </div>                    
                     </div>
                 </div> 
-                <div className="position-absolute" style={{bottom: "-56px", width: "calc(100% - 32px)"}}>
-                    <img src={flores} alt="" style={{width: "100%"}} />
-                </div>           
+                <div className="flowers_separator_container position-absolute">
+                    <img src={flores} alt="Separador flores" />
+                </div>       
             </section>
             <section style={{padding: 48}}>
                 <WeddingForm />
