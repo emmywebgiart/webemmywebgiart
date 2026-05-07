@@ -62,6 +62,26 @@ export default function IsaiLupita () {
 
     }, []);
 
+    useEffect(() => {
+        const audio = audioRef.current
+
+        const handleVisibilityChange = () => {
+            if (!audio) return
+
+            if (document.hidden) {
+                audio.pause()
+            } else {
+                audio.play().catch(() => {})
+            }
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, []);
+
     const abrirInvitacion = () => {
         setOverlayVisible(false)
 
