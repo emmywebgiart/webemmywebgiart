@@ -128,139 +128,124 @@ export default function IsaiLupita () {
             )}
 
             {!overlayVisible && (
-                <>        
-                    <section className="section_hero" style={{background: `url(${imgPrincipal})`, width: "100%", height: "100vh", backgroundSize: "cover", backgroundPosition: "center"}}>
-                        {/* <img src={imgPrincipal} alt="" style={{width: "100%"}} /> */}
-                        <div className="position-relative d-flex flex-column gap-5">
-                            <div className="text-center" style={{padding: "32px", paddingTop: "64px"}}>
-                                <h1 className="hero_title font_great_vibes mb-0 text-center d-inline-block">Nuestra Boda</h1>
+                <>
+                    <section className="section_hero" style={{backgroundImage: `url(${imgPrincipal})`}}>
+                        <div className="hero_content position-relative d-flex flex-column">
+                            <div className="hero_title_container text-center">
+                                <h1 className="hero_title font_great_vibes d-inline-block mb-0">Nuestra Boda</h1>
                             </div>
                             <div className="text-center">
-                                <h2 className="hero_names font_lustria" style={{fontSize: "4rem"}}>Isaí y Lupita</h2>
-                                <div style={{padding: "0 96px"}}>
-                                    <p className="font_lustria text-white" style={{fontSize: "0.75rem"}}>"Lo que se cuida y se pone en manos de Dios, dura toda la vida"</p>
+                                <h2 className="hero_names font_lustria">Isaí y Lupita</h2>
+                                <div className="hero_quote">
+                                    <p className="hero_quote_text font_lustria text-white mb-0">"Lo que se cuida y se pone en manos de Dios, dura toda la vida"</p>
                                 </div>
                             </div>
-                        </div>              
+                        </div>
                     </section>
-                    <section style={{padding: "16px", paddingBottom: "48px"}}>
-                        <div style={{padding: "32px 0"}}>
-                            <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Save the date</h3>
+                    <section style={{padding: "clamp(1rem, 3vw, 2rem)", paddingBottom: "clamp(3rem, 9vw, 6rem)"}}>
+                        <div style={{padding: "clamp(1.5rem, 4.5vw, 3rem) 0"}}>
+                            <h3 className="section_title_green text-center font_great_vibes">Save the date</h3>
                         </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                            <img src={flor1} alt="" style={{width: "133px"}} />
-                            <div className="text-center">
-                                <p style={{fontSize: "24px"}}>Agosto</p>
-                                <p style={{fontSize: "4rem", fontWeight: "bolder"}}>29</p>
-                                <p style={{fontSize: "24px"}}>2026</p>
+                        <div className="d-flex flex-column" style={{gap: "clamp(0.5rem, 1.5vw, 1rem)"}}>                    
+                            <div className="d-flex justify-content-between align-items-center">
+                                <img src={flor1} alt="" style={{width: "133px"}} />
+                                <div className="text-center">
+                                    <p style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>Agosto</p>
+                                    <p className="fw-bolder" style={{fontSize: "clamp(4rem, 10vw, 8rem)"}}>29</p>
+                                    <p className="mb-0" style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>2026</p>
+                                </div>
+                                <img src={flor1} alt="" style={{width: "133px", transform: "scaleX(-1)"}} />
                             </div>
-                            <img src={flor1} alt="" style={{width: "133px", transform: "scaleX(-1)"}} />
-                        </div>
-                        <div>
-                            {/* <div style={{background: "#778873", borderRadius: "32px", padding: "16px"}}>                   
-                                <div className="row">
-                                    <div className="col-3">
-                                        <span className="d-block text-center" style={{fontSize: "2rem", color: "#D4DE95"}}>24</span>
-                                    </div>
-                                    <div className="col-3">
-                                        <span className="d-block text-center" style={{fontSize: "2rem", color: "#D4DE95"}}>12</span>
-                                    </div>
-                                    <div className="col-3">
-                                        <span className="d-block text-center" style={{fontSize: "2rem", color: "#D4DE95"}}>24</span>
-                                    </div>
-                                    <div className="col-3">
-                                        <span className="d-block text-center" style={{fontSize: "2rem", color: "#D4DE95"}}>24</span>
-                                    </div>
-                                </div>
-                            </div> */}
-                            <div className="d-flex flex-column gap-2">                  
-                                <div
-                                style={{
-                                    background: "#778873",
-                                    borderRadius: "32px",
-                                    padding: "16px",
-                                }}
-                                >
-                                    <div className="row text-center fw-bolder">
-                                        <div className="col-3">
-                                            <span style={{ fontSize: "2rem", color: "#D4DE95" }}>
-                                                {days}
-                                            </span>
-                                        </div>
+                            <div>
+                                <div className="d-flex flex-column" style={{gap: "clamp(0.5rem, 1.5vw, 1rem)"}}>                  
+                                    <div
+                                    style={{
+                                        background: "#778873",
+                                        borderRadius: "32px",
+                                        padding: "clamp(1rem, 3vw, 2rem)",
+                                    }}
+                                    >
+                                        <div className="row text-center fw-bolder">
+                                            <div className="col-3">
+                                                <span className="counter_number">
+                                                    {days}
+                                                </span>
+                                            </div>
 
-                                        <div className="col-3">
-                                            <span style={{ fontSize: "2rem", color: "#D4DE95" }}>
-                                                {hours}
-                                            </span>
-                                        </div>
+                                            <div className="col-3">
+                                                <span className="counter_number">
+                                                    {hours}
+                                                </span>
+                                            </div>
 
-                                        <div className="col-3">
-                                            <span style={{ fontSize: "2rem", color: "#D4DE95" }}>
-                                                {minutes}
-                                            </span>
-                                        </div>
+                                            <div className="col-3">
+                                                <span className="counter_number">
+                                                    {minutes}
+                                                </span>
+                                            </div>
 
-                                        <div className="col-3">
-                                            <span style={{ fontSize: "2rem", color: "#D4DE95" }}>
-                                                {seconds}
-                                            </span>
+                                            <div className="col-3">
+                                                <span className="counter_number">
+                                                    {seconds}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div style={{textTransform: "uppercase", fontSize: "0.75rem", padding: "0px 16px"}}>
-                                    <div className="row">
-                                        <div className="col-3">
-                                            <span className="d-block text-center">Días</span>
-                                        </div>
-                                        <div className="col-3">
-                                            <span className="d-block text-center">Horas</span>
-                                        </div>
-                                        <div className="col-3">
-                                            <span className="d-block text-center">Minutos</span>
-                                        </div>
-                                        <div className="col-3">
-                                            <span className="d-block text-center">Segundos</span>
+                                    <div style={{padding: "0px clamp(1rem, 3vw, 2rem)"}}>
+                                        <div className="row">
+                                            <div className="col-3">
+                                                <span className="counter_label d-block text-center">Días</span>
+                                            </div>
+                                            <div className="col-3">
+                                                <span className="counter_label d-block text-center">Horas</span>
+                                            </div>
+                                            <div className="col-3">
+                                                <span className="counter_label d-block text-center">Minutos</span>
+                                            </div>
+                                            <div className="col-3">
+                                                <span className="counter_label d-block text-center">Segundos</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>                 
+                                </div>                 
+                            </div>
                         </div>
                     </section>
                     <section className="section_photo">
-                        <img src={img2} alt="" style={{width: "100%"}} />
-                        <div style={{position: "absolute", top: 0, padding: 16, paddingTop: 0, zIndex: 1}}>
-                            <div className="photo_frase_container" style={{background: "rgb(255, 255, 255, .5)", backdropFilter: "blur(15px)", borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px"}}>
-                                <div style={{padding: 16, paddingLeft: 48, paddingRight: 48}}>
-                                    <p className="text-center" style={{color: "#3D4127"}}>¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
+                        <img src={img2} alt="" className="w-100" />
+                        <div className="section_photo_overlay">
+                            <div className="photo_section_card_blur photo_frase_container">
+                                <div className="photo_card_blur">
+                                    <p className="position-relative text-center" style={{color: "#3D4127"}}>¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section className="position-relative" style={{background: "#778873", padding: "16px", paddingBottom: "144px"}}>
-                        <div style={{padding: "32px 0"}}>
-                            <h3 className="font_great_vibes text-center" style={{color: "#D4DE95", fontSize: "2.5rem"}}>Con la bendición de Dios y de nuestros padres</h3>
+                    <section className="position-relative" style={{background: "#778873", padding: "clamp(1rem, 3vw, 2rem)", paddingBottom: "clamp(9rem, 27vw, 18rem)"}}>
+                        <div style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
+                            <h3 className="section_title_yellow font_great_vibes text-center">Con la bendición de Dios y de nuestros padres</h3>
                         </div>
-                        <section className="d-flex flex-column gap-5">
-                            <article className="d-flex flex-column gap-4 text-center text-white">
+                        <section className="d-flex flex-column" style={{gap: "clamp(3rem, 9vw, 6rem)"}} >
+                            <article className="d-flex flex-column text-center text-white" style={{gap: "clamp(1.5rem, 4.5vw, 3rem)"}}>
                                 <div className="position-relative">
-                                    <p className="mb-0">Padres del novio</p>
+                                    <p className="position-relative mb-0" style={{zIndex: 1}}>Padres del novio</p>
                                     <div style={{position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)"}}>
-                                        <img src={zapato} alt="" style={{width: "121px", opacity: ".2"}} />
+                                        <img src={zapato} alt="" style={{width: "clamp(7.5625rem, 22.6875vw, 15.125rem)", opacity: ".2"}} />
                                     </div>
                                 </div>
-                                <div>
+                                <div className="position-relative">
                                     <p className="mb-0">Ernesto Peña Miranda</p>
                                     <p>Socorro Pérez Reyes</p>
                                 </div>
                             </article>
-                            <article className="d-flex flex-column gap-4 text-center text-white">
+                            <article className="d-flex flex-column text-center text-white" style={{gap: "clamp(1.5rem, 4.5vw, 3rem)"}}>
                                 <div className="position-relative">
-                                    <p className="mb-0">Padres de la novia</p>
+                                    <p className="position-relative mb-0" style={{zIndex: 1}}>Padres de la novia</p>
                                     <div style={{position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)"}}>
-                                        <img src={vestido} alt="" style={{width: "82px", opacity: ".2"}} />
+                                        <img src={vestido} alt="" style={{width: "clamp(5.125rem, 15.375vw, 10.250rem)", opacity: ".2"}} />
                                     </div>
                                 </div>
-                                <div>
+                                <div className="position-relative">
                                     <p className="mb-0">Juan Angeles Duran</p>
                                     <p>Timotea Marcos Flores</p>
                                 </div>
@@ -327,28 +312,28 @@ export default function IsaiLupita () {
                         </Swiper>
                         
                     </section>
-                    <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
+                    <section className="position-relative" style={{padding: "clamp(1rem, 3vw, 2rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)"}}>
                         <img src={iglesia} alt="" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", opacity: ".2", left: 0, top: 0}} />
-                        <div className="position-relative" style={{padding: "32px 0"}}>
-                            <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Ceremonia religiosa</h3>
+                        <div className="position-relative" style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
+                            <h3 className="section_title_green text-center font_great_vibes">Ceremonia religiosa</h3>
                         </div>
                         <section className="position-relative text-center">
                             <article>
                                 <p className="mb-0">Iglesia católica</p>
-                                <p style={{fontSize: "1.5rem", fontWeight: "bolder"}}>Jesús Nazareno</p>
+                                <p className="fw-bolder" style={{fontSize:  "clamp(1.5rem, 4.5vw, 3rem)"}}>Jesús Nazareno</p>
                             </article>
                             <article>
                                 <p className="mb-0">Jocotitlán, Estado de México</p>
-                                <p style={{fontSize: "1.5rem", fontWeight: "bolder"}}>13:00 HRS</p>
+                                <p className="fw-bolder" style={{fontSize:  "clamp(1.5rem, 4.5vw, 3rem)"}}>13:00 HRS</p>
                             </article>
                         </section>
                         <div className="position-relative d-flex justify-content-center">
-                            <a style={{background: "#D4DE95", color: "#2F5249", padding: "8px 16px", borderRadius: "0.75rem", textDecoration: "none"}} href="https://www.google.com/maps/place/Iglesia+Jesus+Nazareno/@19.7107036,-99.7879141,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25dbeb19eb7e9:0x6d40fd1a4c63e07f!8m2!3d19.7107036!4d-99.7853392!16s%2Fg%2F11b6bv1zng?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver mapa</a>
+                            <a href="https://www.google.com/maps/place/Iglesia+Jesus+Nazareno/@19.7107036,-99.7879141,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25dbeb19eb7e9:0x6d40fd1a4c63e07f!8m2!3d19.7107036!4d-99.7853392!16s%2Fg%2F11b6bv1zng?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="button_general">Ver mapa</a>
                         </div>
                     </section>
-                    <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>     
-                            <div className="section_title_container text-center" style={{padding: "32px 0"}}>
+                    <section className="position-relative" style={{background: "#778873", padding: "clamp(1rem, 3vw, 2rem)"}}>
+                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "clamp(9rem, 27vw, 18rem)"}}>     
+                            <div className="section_title_container text-center" style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
                                 <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                                     <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Nuestros padrinos</h3>
                                 </div>
@@ -362,28 +347,28 @@ export default function IsaiLupita () {
                             <img src={flores} alt="Separador flores" />
                         </div>
                     </section>
-                    <section className="position-relative" style={{padding: "16px", paddingBottom: "48px"}}>
+                    <section className="position-relative" style={{padding: "clamp(1rem, 3vw, 2rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)"}}>
                         <img src={salon} alt="" style={{width: "100%", height: "100%", objectFit: "cover", position: "absolute", opacity: ".2", left: 0, top: 0}} />
-                        <div className="position-relative" style={{padding: "32px 0"}}>
-                            <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Ceremonia civil y recepción</h3>
+                        <div className="position-relative" style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
+                            <h3 className="section_title_green text-center font_great_vibes">Ceremonia civil y recepción</h3>
                         </div>
                         <section className="position-relative text-center">
                             <article>
                                 <p className="mb-0">Salón</p>
-                                <p style={{fontSize: "1.5rem", fontWeight: "bolder"}}>"Fati"</p>
+                                <p className="fw-bolder" style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>"Fati"</p>
                             </article>
                             <article>
                                 <p className="mb-0">Jocotitlán, Estado de México</p>
-                                <p style={{fontSize: "1.5rem", fontWeight: "bolder"}}>15:00 HRS</p>
+                                <p className="fw-bolder" style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>15:00 HRS</p>
                             </article>
                         </section>
                         <div className="position-relative d-flex justify-content-center">
-                            <a style={{background: "#D4DE95", color: "#2F5249", padding: "8px 16px", borderRadius: "0.75rem", textDecoration: "none"}} href="https://www.google.com/maps/place/Salon+Jard%C3%ADn+FATY/@19.7017385,-99.7923488,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25d8659b32aa3:0x4fedc4b3fc0f40ff!8m2!3d19.7017335!4d-99.7897739!16s%2Fg%2F11j2vg2vc7?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver mapa</a>
+                            <a href="https://www.google.com/maps/place/Salon+Jard%C3%ADn+FATY/@19.7017385,-99.7923488,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25d8659b32aa3:0x4fedc4b3fc0f40ff!8m2!3d19.7017335!4d-99.7897739!16s%2Fg%2F11j2vg2vc7?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="button_general">Ver mapa</a>
                         </div>
                     </section>
-                    <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>
-                            <div className="section_title_container text-center" style={{padding: "32px 0"}}>
+                    <section className="position-relative" style={{background: "#778873", padding: "clamp(1rem, 3vw, 2rem)"}}>
+                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "clamp(9rem, 27vw, 18rem)"}}>
+                            <div className="section_title_container text-center" style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
                                 <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                                     <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Itinerario</h3>
                                 </div>
@@ -473,20 +458,20 @@ export default function IsaiLupita () {
                             <img src={flores} alt="Separador flores" />
                         </div>
                     </section>
-                    <section style={{padding: "16px", paddingBottom: "48px"}}>
-                        <div style={{padding: "32px 0"}}>
-                            <h3 className="text-center font_great_vibes" style={{fontSize: "2.5rem", color: "#437057"}}>Código de vestimenta</h3>
+                    <section style={{padding: "clamp(1rem, 3vw, 2rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)"}}>
+                        <div style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
+                            <h3 className="section_title_green text-center font_great_vibes">Código de vestimenta</h3>
                         </div>
-                        <div className="d-flex flex-column gap-3">
-                            <section className="d-flex justify-content-center gap-4">
+                        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
+                            <section className="d-flex justify-content-center" style={{gap: "clamp(1.5rem, 4.5vw, 3rem)"}}>
                                 <article>
-                                    <div className="d-flex justify-content-center align-items-center" style={{background: "#BAC095", borderRadius: "12px", height: "128px", width: "128px"}}>
-                                        <img src={vestido2} alt="" style={{height: "80px"}} />
+                                    <div className="d-flex justify-content-center align-items-center" style={{background: "#BAC095", borderRadius: "12px", height: "clamp(8rem, 22vw, 16rem)", width: "clamp(8rem, 22vw, 16rem)"}}>
+                                        <img src={vestido2} alt="" style={{height: "clamp(5rem, 15vw, 10rem)"}} />
                                     </div>
                                 </article>
                                 <article>
-                                    <div className="d-flex justify-content-center align-items-center" style={{background: "#D9D9D9", borderRadius: "12px", height: "128px", width: "128px"}}>
-                                        <img src={traje} alt="" style={{height: "80px"}} />
+                                    <div className="d-flex justify-content-center align-items-center" style={{background: "#D9D9D9", borderRadius: "12px", height: "clamp(8rem, 22vw, 16rem)", width: "clamp(8rem, 22vw, 16rem)"}}>
+                                        <img src={traje} alt="" style={{height: "clamp(5rem, 15vw, 10rem)"}} />
                                     </div>
                                 </article>
                             </section>
@@ -498,9 +483,9 @@ export default function IsaiLupita () {
                         </div>
                                     
                     </section>
-                    <section className="position-relative" style={{background: "#778873", padding: 16}}>
-                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "144px"}}>
-                            <div className="section_title_container text-center" style={{padding: "32px 0"}}>
+                    <section className="position-relative" style={{background: "#778873", padding: "clamp(1rem, 3vw, 2rem)"}}>
+                        <div style={{border: "1px solid #D4DE95", borderRadius: "1rem", paddingBottom: "clamp(9rem, 27vw, 18rem)"}}>
+                            <div className="section_title_container text-center" style={{padding: "clamp(2rem, 6vw, 4rem) 0"}}>
                                 <div className="position-relative" style={{display: "inline-block", background: "#778873", padding: 8}}>
                                     <h3 className="section_title font_great_vibes mb-0" style={{color: "#D4DE95"}}>Regalos</h3>
                                 </div>
@@ -511,7 +496,7 @@ export default function IsaiLupita () {
                                     <p>Nos sentimos bendecidos de tener familiares y amigos como tú, si estás pensando en un regalo, cualquier contribución económica que puedas hacer nos ayudará, tu generosidad será recordada con gratitud.</p>
                                 </div>
                                 <div className="position-absolute" style={{top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: "0"}}>
-                                    <img src={regalo} alt="" style={{width: "252px", opacity: .2}} />
+                                    <img src={regalo} alt="" style={{width: "clamp(15.75rem, 47.25vw, 31.5rem)", opacity: .2}} />
                                 </div>                    
                             </div>
                         </div> 
