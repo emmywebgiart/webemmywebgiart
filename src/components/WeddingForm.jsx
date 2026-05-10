@@ -14,45 +14,56 @@ function WeddingForm() {
 
     try {
     //   const response = await fetch("http://localhost:5000/rsvp", {
-        // const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-        // method: "POST",
-        // headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify(data),
-        // });
-      //   const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-      //     method: "POST",
-      //     body: JSON.stringify(data),
-      //   });
-
-      // const result = await response.json()
-      
-      // if (result.result === "success") {
-      //   setStatus("Formulario enviado correctamente")
-      //   setFullName("")
-      //   setConfirmation("")
-      //   setGuests(1)
-      //   setMessage("")
-      // } else {
-      //   setStatus("Error al enviar el formulario")
-      // }
-      await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
         method: "POST",
-        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-      });
+        });
 
-      // Con no-cors NO puedes leer respuesta
-      setStatus("Formulario enviado correctamente");
-
-      setFullName("");
-      setConfirmation("");
-      setGuests(1);
-      setMessage("");
+      const result = await response.json()
+      if (result.result === "success") {
+        setStatus("Formulario enviado correctamente")
+        setFullName("")
+        setConfirmation("")
+        setGuests(1)
+        setMessage("")
+      } else {
+        setStatus("Error al enviar el formulario")
+      }
     } catch (error) {
       console.error(error);
       setStatus("Error al enviar el formulario")
     }
   };
+
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   const formData = new FormData();
+//   formData.append("fullName", fullName);
+//   formData.append("confirmation", confirmation);
+//   formData.append("guests", guests);
+//   formData.append("message", message);
+
+//   try {
+//     await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+//       method: "POST",
+//       body: formData,
+//       mode: "no-cors"
+//     });
+
+//     setStatus("Formulario enviado correctamente");
+
+//     setFullName("");
+//     setConfirmation("");
+//     setGuests(1);
+//     setMessage("");
+
+//   } catch (error) {
+//     console.error(error);
+//     setStatus("Error al enviar");
+//   }
+// };
 
   return (
     <form onSubmit={handleSubmit} style={{border: "2px solid #778873", borderRadius: 16}}>
