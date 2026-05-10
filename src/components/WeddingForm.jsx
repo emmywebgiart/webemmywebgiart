@@ -39,24 +39,35 @@ function WeddingForm() {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const res = await fetch("/api/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      fullName,
-      confirmation,
-      guests,
-      message
-    })
-  });
+  try {
+    const response = await fetch("/api/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName,
+        confirmation,
+        guests,
+        message,
+      }),
+    });
 
-  const data = await res.json();
+    const data = await response.json();
 
-  if (data.success) {
-    setStatus("Enviado correctamente");
-  } else {
+    if (data.success) {
+      setStatus("Formulario enviado correctamente");
+
+      setFullName("");
+      setConfirmation("");
+      setGuests(1);
+      setMessage("");
+    } else {
+      setStatus("Error: " + data.message);
+    }
+
+  } catch (error) {
+    console.error(error);
     setStatus("Error al enviar");
   }
 };
