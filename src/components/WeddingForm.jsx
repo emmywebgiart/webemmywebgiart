@@ -19,12 +19,29 @@ function WeddingForm() {
         // headers: { "Content-Type": "application/json" },
         // body: JSON.stringify(data),
         // });
-        const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-          method: "POST",
-          body: JSON.stringify(data),
-        });
+      //   const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+      //     method: "POST",
+      //     body: JSON.stringify(data),
+      //   });
 
-      const result = await response.json()
+      // const result = await response.json()
+
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      const text = await response.text();
+      console.log("RAW RESPONSE:", text);
+
+      let result;
+
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        throw new Error("Respuesta no es JSON: " + text);
+      }
+
       if (result.result === "success") {
         setStatus("Formulario enviado correctamente")
         setFullName("")
