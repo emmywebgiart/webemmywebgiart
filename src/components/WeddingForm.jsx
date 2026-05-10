@@ -25,32 +25,29 @@ function WeddingForm() {
       //   });
 
       // const result = await response.json()
-
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+      
+      // if (result.result === "success") {
+      //   setStatus("Formulario enviado correctamente")
+      //   setFullName("")
+      //   setConfirmation("")
+      //   setGuests(1)
+      //   setMessage("")
+      // } else {
+      //   setStatus("Error al enviar el formulario")
+      // }
+      await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
         method: "POST",
+        mode: "no-cors",
         body: JSON.stringify(data),
       });
 
-      const text = await response.text();
-      console.log("RAW RESPONSE:", text);
+      // Con no-cors NO puedes leer respuesta
+      setStatus("Formulario enviado correctamente");
 
-      let result;
-
-      try {
-        result = JSON.parse(text);
-      } catch (e) {
-        throw new Error("Respuesta no es JSON: " + text);
-      }
-
-      if (result.result === "success") {
-        setStatus("Formulario enviado correctamente")
-        setFullName("")
-        setConfirmation("")
-        setGuests(1)
-        setMessage("")
-      } else {
-        setStatus("Error al enviar el formulario")
-      }
+      setFullName("");
+      setConfirmation("");
+      setGuests(1);
+      setMessage("");
     } catch (error) {
       console.error(error);
       setStatus("Error al enviar el formulario")
