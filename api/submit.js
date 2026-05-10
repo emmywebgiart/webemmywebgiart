@@ -38,8 +38,6 @@
 //     return res.status(500).json({ success: false });
 //   }
 // }
-// export default async function handler(req, res) {
-//   res.status(200).json({ ok: true });
-// }
-console.log("EMAIL:", process.env.GOOGLE_CLIENT_EMAIL);
-console.log("SHEET:", process.env.GOOGLE_SHEET_ID);
+export default async function handler(req, res) {
+  res.status(200).json({ ok: true });
+}
