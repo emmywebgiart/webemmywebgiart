@@ -3,17 +3,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { EffectCards } from 'swiper/modules';
 import WeddingForm from "../../components/WeddingForm";
-import imgPrincipal from "../../assets/img/invitaciones/isaiylupita/IMG_3356.jpg"
+import imgPrincipal from "../../assets/img/invitaciones/isaiylupita/img3356.jpg"
 import flor1 from "../../assets/img/invitaciones/isaiylupita/flor1.png"
-import img2 from "../../assets/img/invitaciones/isaiylupita/DSC_0118.JPG"
+import img2 from "../../assets/img/invitaciones/isaiylupita/dsc0118.JPG"
 import zapato from "../../assets/img/invitaciones/isaiylupita/zapato.png"
 import vestido from "../../assets/img/invitaciones/isaiylupita/vestido.png"
 import flores from "../../assets/img/invitaciones/isaiylupita/flores.png"
-import img3 from "../../assets/img/invitaciones/isaiylupita/DSC_0127.JPG"
-import img4 from "../../assets/img/invitaciones/isaiylupita/DSC_0207.JPG"
-import img5 from "../../assets/img/invitaciones/isaiylupita/DSC_0264.JPG"
-import img6 from "../../assets/img/invitaciones/isaiylupita/IMG_3323.JPG"
-import img7 from "../../assets/img/invitaciones/isaiylupita/DSC_0100.JPG"
+import img3 from "../../assets/img/invitaciones/isaiylupita/dsc0127.JPG"
+import img4 from "../../assets/img/invitaciones/isaiylupita/dsc0207.JPG"
+import img5 from "../../assets/img/invitaciones/isaiylupita/dsc0264.JPG"
+import img6 from "../../assets/img/invitaciones/isaiylupita/img3323.JPG"
+import img7 from "../../assets/img/invitaciones/isaiylupita/dsc0100.JPG"
 import iglesia from "../../assets/img/invitaciones/isaiylupita/iglesia.png"
 import salon from "../../assets/img/invitaciones/isaiylupita/salon.png"
 import vestido2 from "../../assets/img/invitaciones/isaiylupita/vestido2.png"
@@ -25,6 +25,7 @@ import sello from "../../assets/img/invitaciones/isaiylupita/sellolacre.png"
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-cards';
+import { clamp } from "motion";
 
 export default function IsaiLupita () {
     const targetDate = new Date("2026-08-29T00:00:00");
@@ -504,7 +505,7 @@ export default function IsaiLupita () {
                             <img src={flores} alt="Separador flores" />
                         </div>       
                     </section>
-                    <section style={{padding: 48}}>
+                    <section style={{padding: "clamp(3rem, 9vw, 6rem)", paddingRight: "clamp(1rem, 3vw, 2rem)", paddingLeft: "clamp(1rem, 3vw, 2rem)"}}>
                         <WeddingForm />
                     </section>
                     </>

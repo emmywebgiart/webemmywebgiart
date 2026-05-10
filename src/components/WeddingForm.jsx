@@ -37,63 +37,68 @@ function WeddingForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Nombre completo:</label>
-        <input
-          type="text"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-          required
-        />
-      </div>
-
-      <div>
-        <label>Confirmación:</label>
-        <label>
+    <form onSubmit={handleSubmit} style={{border: "2px solid #778873", borderRadius: 16}}>
+      <div style={{padding: "clamp(1rem, 3vw, 2rem)"}}>     
+        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
+          <label htmlFor="name">Nombre completo:</label>
           <input
-            type="radio"
-            name="confirmation"
-            value="Sí"
-            checked={confirmation === "Sí"}
-            onChange={(e) => setConfirmation(e.target.value)}
+            id="name"
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             required
           />
-          Sí
-        </label>
-        <label>
+        </div>
+
+        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
+          <label>Confirmación:</label>
+          <label>
+            <input
+              type="radio"
+              name="confirmation"
+              value="Sí"
+              checked={confirmation === "Sí"}
+              onChange={(e) => setConfirmation(e.target.value)}
+              required
+            />
+            Sí
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="confirmation"
+              value="No"
+              checked={confirmation === "No"}
+              onChange={(e) => setConfirmation(e.target.value)}
+            />
+            No
+          </label>
+        </div>
+
+        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
+          <label htmlFor="noInvitados">Número de invitados:</label>
           <input
-            type="radio"
-            name="confirmation"
-            value="No"
-            checked={confirmation === "No"}
-            onChange={(e) => setConfirmation(e.target.value)}
+            id="noInvitados"
+            type="number"
+            min="0"
+            value={guests}
+            onChange={(e) => setGuests(e.target.value)}
+            required
           />
-          No
-        </label>
-      </div>
+        </div>
 
-      <div>
-        <label>Número de invitados:</label>
-        <input
-          type="number"
-          min="0"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
-          required
-        />
-      </div>
+        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
+          <label htmlFor="message">Mensaje para los novios:</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </div>
 
-      <div>
-        <label>Mensaje para los novios:</label>
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+        <button type="submit">Enviar</button>
+        <p>{status}</p>
       </div>
-
-      <button type="submit">Enviar</button>
-      <p>{status}</p>
     </form>
   );
 }
