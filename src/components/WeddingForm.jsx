@@ -19,7 +19,7 @@ function WeddingForm() {
         // headers: { "Content-Type": "application/json" },
         // body: JSON.stringify(data),
         // });
-        const response = await fetch(URL, {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
           method: "POST",
           body: JSON.stringify(data),
         });
