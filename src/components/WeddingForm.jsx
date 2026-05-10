@@ -7,34 +7,59 @@ function WeddingForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const data = { fullName, confirmation, guests, message };
+
+  //   try {
+  //   //   const response = await fetch("http://localhost:5000/rsvp", {
+  //       const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(data),
+  //       });
+
+  //     const result = await response.json()
+  //     if (result.result === "success") {
+  //       setStatus("Formulario enviado correctamente")
+  //       setFullName("")
+  //       setConfirmation("")
+  //       setGuests(1)
+  //       setMessage("")
+  //     } else {
+  //       setStatus("Error al enviar el formulario")
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     setStatus("Error al enviar el formulario")
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const data = { fullName, confirmation, guests, message };
+  const res = await fetch("/api/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      fullName,
+      confirmation,
+      guests,
+      message
+    })
+  });
 
-    try {
-    //   const response = await fetch("http://localhost:5000/rsvp", {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-        });
+  const data = await res.json();
 
-      const result = await response.json()
-      if (result.result === "success") {
-        setStatus("Formulario enviado correctamente")
-        setFullName("")
-        setConfirmation("")
-        setGuests(1)
-        setMessage("")
-      } else {
-        setStatus("Error al enviar el formulario")
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("Error al enviar el formulario")
-    }
-  };
+  if (data.success) {
+    setStatus("Enviado correctamente");
+  } else {
+    setStatus("Error al enviar");
+  }
+};
 
 //   const handleSubmit = async (e) => {
 //   e.preventDefault();
