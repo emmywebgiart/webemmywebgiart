@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function WeddingForm() {
   const [fullName, setFullName] = useState("");
@@ -6,6 +6,7 @@ function WeddingForm() {
   const [guests, setGuests] = useState(1);
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
+  const [confirmed, setConfirmed] = useState(false)
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -37,134 +38,148 @@ function WeddingForm() {
   // };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch("/api/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fullName,
-        confirmation,
-        guests,
-        message,
-      }),
-    });
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          confirmation,
+          guests,
+          message,
+        }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setStatus("Formulario enviado correctamente");
+      if (data.success) {
 
-      setFullName("");
-      setConfirmation("");
-      setGuests(1);
-      setMessage("");
-    } else {
-      setStatus("Error: " + data.message);
+        let msg
+        if (confirmation.toLowerCase() === "sí") {
+          msg = `¡Gracias ${fullName} por confirmar tu asistencia! Nos alegra que nos acompañes. ¡Te esperamos!`
+        } else {
+          msg = `¡Gracias por avisar, ${fullName}. Aunque no puedas asistir!`
+        }
+
+        setConfirmed(true)
+        setStatus(msg);
+
+        setFullName("");
+        setConfirmation("");
+        setGuests(1);
+        setMessage("");
+      } else {
+        setStatus("Error: " + data.message);
+      }
+
+    } catch (error) {
+      console.error(error);
+      setStatus("Error al enviar");
     }
+  };
 
-  } catch (error) {
-    console.error(error);
-    setStatus("Error al enviar");
-  }
-};
-
-//   const handleSubmit = async (e) => {
-//   e.preventDefault();
-
-//   const formData = new FormData();
-//   formData.append("fullName", fullName);
-//   formData.append("confirmation", confirmation);
-//   formData.append("guests", guests);
-//   formData.append("message", message);
-
-//   try {
-//     await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-//       method: "POST",
-//       body: formData,
-//       mode: "no-cors"
-//     });
-
-//     setStatus("Formulario enviado correctamente");
-
-//     setFullName("");
-//     setConfirmation("");
-//     setGuests(1);
-//     setMessage("");
-
-//   } catch (error) {
-//     console.error(error);
-//     setStatus("Error al enviar");
-//   }
-// };
+  useEffect(() => {
+    if (confirmed) {
+      const timer = setTimeout(() => setConfirmed(false), 3000);
+      return () => clearTimeout(timer)
+    }
+  }, [confirmed]);
 
   return (
-    <form onSubmit={handleSubmit} style={{border: "2px solid #778873", borderRadius: 16}}>
-      <div style={{padding: "clamp(1rem, 3vw, 2rem)"}}>     
-        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
-          <label htmlFor="name">Nombre completo:</label>
-          <input
-            id="name"
-            type="text"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
-          <label>Confirmación:</label>
-          <label>
+    <>
+    <div className="section_general_title_container">
+      <h3 className="section_title_green text-center font_great_vibes">Confirma tu asistencia</h3>
+    </div>
+    <form onSubmit={handleSubmit} className="card_border border_p3">
+      <div className="card_body">     
+        <div className="d-flex flex-column gap_3">    
+          <div className="d-flex flex-column">
+            <label htmlFor="name" className="mb_1 fs_6">Nombre completo</label>
             <input
-              type="radio"
-              name="confirmation"
-              value="Sí"
-              checked={confirmation === "Sí"}
-              onChange={(e) => setConfirmation(e.target.value)}
+              id="name"
+              className="form_input"
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               required
+              autoComplete="off"
+              placeholder="Ingresa tu nombre completo"
             />
-            Sí
-          </label>
-          <label>
+          </div>
+
+          <div className="d-flex flex-column">
+            <p className="mb_1 fs_6">Confirmación</p>
+            <div className="row">
+              <div className="col-6">
+                <label className="fs_6">
+                  <input
+                    type="radio"
+                    name="confirmation"
+                    value="Sí"
+                    checked={confirmation === "Sí"}
+                    onChange={(e) => setConfirmation(e.target.value)}
+                    required
+                  />
+                  Sí asistiré
+                </label>
+              </div>
+              <div className="col-6">
+                <label className="fs_6">
+                  <input                  
+                    type="radio"
+                    name="confirmation"
+                    value="No"
+                    checked={confirmation === "No"}
+                    onChange={(e) => setConfirmation(e.target.value)}
+                  />
+                  No asistiré
+                </label>
+              </div>
+            </div>            
+          </div>
+
+          <div className="d-flex flex-column">
+            <label htmlFor="noInvitados" className="mb_1 fs_6">Número de invitados</label>
             <input
-              type="radio"
-              name="confirmation"
-              value="No"
-              checked={confirmation === "No"}
-              onChange={(e) => setConfirmation(e.target.value)}
+              id="noInvitados"
+              className="form_input"
+              type="number"
+              min="0"
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              required
+              placeholder="Ingresa el número de invitados"
             />
-            No
-          </label>
-        </div>
+          </div>
 
-        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
-          <label htmlFor="noInvitados">Número de invitados:</label>
-          <input
-            id="noInvitados"
-            type="number"
-            min="0"
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
-            required
-          />
-        </div>
+          <div className="d-flex flex-column">
+            <label htmlFor="message" className="mb_1 fs_6">Mensaje para los novios</label>
+            <textarea
+              id="message"
+              className="form_input"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Ingresa un mensaje para los novios"
+            />
+          </div>
 
-        <div className="d-flex flex-column" style={{gap: "clamp(1rem, 3vw, 2rem)"}}>
-          <label htmlFor="message">Mensaje para los novios:</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          <button type="submit" className="button_general">Enviar</button>
         </div>
-
-        <button type="submit">Enviar</button>
-        <p>{status}</p>
       </div>
     </form>
+    {confirmed ? (
+      <div className="d-flex align-items-center justify-cont-center" style={{height: "100%", background: "#778873", width: "100%", position: "fixed", top: 0, left: 0, padding: "clamp(1rem, 3vw, 2rem)"}}>
+        <div>
+          <p className="text-center font_great_vibes color_p4" style={{fontSize: "clamp(3rem, 9vw, 6rem)"}}>¡Gracias {fullName} por confirmar tu asistencia!</p>
+          <p className="text-white text-center font_lustria" style={{fontSize: "clamp(1rem, 3vw, 2rem)"}}>Nos alegra mucho que nos acompañes en este día tan especial.</p>
+        </div>    
+      </div>
+    ) : null}
+    </>
   );
 }
 
