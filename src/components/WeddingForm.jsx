@@ -7,6 +7,7 @@ function WeddingForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [confirmed, setConfirmed] = useState(false)
+  const [confirmedName, setConfirmedName] = useState("")
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -57,6 +58,7 @@ function WeddingForm() {
       const data = await response.json();
 
       if (data.success) {
+        setConfirmedName(fullName)
 
         let msg
         if (confirmation.toLowerCase() === "sí") {
@@ -172,13 +174,13 @@ function WeddingForm() {
       </div>
     </form>
     {confirmed ? (
-      <div className="d-flex align-items-center justify-cont-center" style={{height: "100%", background: "#778873", width: "100%", position: "fixed", top: 0, left: 0, padding: "clamp(1rem, 3vw, 2rem)"}}>
-        <div>
-          <p className="text-center font_great_vibes color_p4" style={{fontSize: "clamp(3rem, 9vw, 6rem)"}}>¡Gracias {fullName} por confirmar tu asistencia!</p>
+      <div className="full_screen bg_p3 d-flex align-items-center justify-content-center">
+        <div className="card_body">
+          <p className="text-center font_great_vibes color_p4" style={{fontSize: "clamp(3rem, 9vw, 6rem)"}}>¡Gracias {confirmedName} por confirmar tu asistencia!</p>
           <p className="text-white text-center font_lustria" style={{fontSize: "clamp(1rem, 3vw, 2rem)"}}>Nos alegra mucho que nos acompañes en este día tan especial.</p>
         </div>    
       </div>
-    ) : null}
+     ) : null} 
     </>
   );
 }

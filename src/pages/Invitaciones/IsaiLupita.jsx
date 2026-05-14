@@ -14,6 +14,8 @@ import img4 from "../../assets/img/invitaciones/isaiylupita/dsc0207.jpg"
 import img5 from "../../assets/img/invitaciones/isaiylupita/dsc0264.jpg"
 import img6 from "../../assets/img/invitaciones/isaiylupita/img3323.jpg"
 import img7 from "../../assets/img/invitaciones/isaiylupita/dsc0100.jpg"
+import img8 from "../../assets/img/invitaciones/isaiylupita/dsc0001.jpeg"
+import img9 from "../../assets/img/invitaciones/isaiylupita/dsc0183.jpg"
 import iglesia from "../../assets/img/invitaciones/isaiylupita/iglesia.png"
 import salon from "../../assets/img/invitaciones/isaiylupita/salon.png"
 import vestido2 from "../../assets/img/invitaciones/isaiylupita/vestido2.png"
@@ -98,17 +100,7 @@ export default function IsaiLupita () {
             <audio ref={audioRef} src={audio} loop hidden />
 
             {overlayVisible && (
-                <div 
-                    className="d-flex justify-content-center align-items-center"
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: '#778873',
-                    }}
-                >
+                <div className="full_screen bg_p3 d-flex justify-content-center align-items-center">
                     <div className="text-center">
                         <h2 className="font_great_vibes" style={{fontSize: "4rem", color: "#D4DE95"}}>Isaí y Lupita</h2>
                         <p className="text-white">Haz clic para abrir tu invitación</p>
@@ -149,13 +141,13 @@ export default function IsaiLupita () {
                         </div>
                         <div className="d-flex flex-column gap_2">
                             <div className="d-flex justify-content-between align-items-center">
-                                <img src={flor1} alt="" style={{width: "clamp(6rem, 18vw, 12rem)"}} />
+                                <img src={flor1} alt="Decoración flor" className="img_flower" />
                                 <div className="text-center">
-                                    <p style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>Agosto</p>
-                                    <p className="fw-bolder" style={{fontSize: "clamp(4rem, 10vw, 8rem)"}}>29</p>
-                                    <p className="mb-0" style={{fontSize: "clamp(1.5rem, 4.5vw, 3rem)"}}>2026</p>
+                                    <p className="fs_4">Agosto</p>
+                                    <p className="date_day fw-bolder">29</p>
+                                    <p className="fs_4 mb-0">2026</p>
                                 </div>
-                                <img src={flor1} alt="" style={{width: "clamp(6rem, 18vw, 12rem)", transform: "scaleX(-1)"}} />
+                                <img src={flor1} alt="Decoración flor" className="img_flower flip_horizontal" />
                             </div>
                             <div>
                                 <div className="d-flex flex-column gap_2">
@@ -226,7 +218,7 @@ export default function IsaiLupita () {
                                         <div className="position-relative">
                                             <p className="position-relative mb-0 z-1">Padres del novio</p>
                                             <div className="subtitle_deco_container">
-                                                <img src={zapato} alt="Decoración" style={{width: "clamp(7.5625rem, 22.6875vw, 15.125rem)"}} />
+                                                <img src={zapato} alt="Decoración" className="img_shoes" />
                                             </div>
                                         </div>
                                         <div className="position-relative">
@@ -238,7 +230,7 @@ export default function IsaiLupita () {
                                         <div className="position-relative">
                                             <p className="position-relative mb-0 z-1">Padres de la novia</p>
                                             <div className="subtitle_deco_container">
-                                                <img src={vestido} alt="Decoración" style={{width: "clamp(5.125rem, 15.375vw, 10.250rem)"}} />
+                                                <img src={vestido} alt="Decoración" className="img_dress" />
                                             </div>
                                         </div>
                                         <div className="position-relative">
@@ -249,7 +241,7 @@ export default function IsaiLupita () {
                                 </section>
                             </div>                            
                         </div>
-                        <div className="flowers_separator_container position-absolute z-3" style={{pointerEvents: "none"}}>
+                        <div className="flowers_separator_container position-absolute pe-none z-3">
                             <img src={flores} alt="Separador flores" />
                         </div> 
                     </section>
@@ -284,6 +276,9 @@ export default function IsaiLupita () {
                             </SwiperSlide>
                             <SwiperSlide lazy="true">
                                 <img src={img7} alt="" className="w-100" loading="lazy" />
+                            </SwiperSlide>
+                            <SwiperSlide lazy="true">
+                                <img src={img8} alt="" className="w-100" loading="lazy" />
                             </SwiperSlide>
                         </Swiper>                        
                     </section>
@@ -445,12 +440,12 @@ export default function IsaiLupita () {
                             <section className="d-flex justify-content-center gap_4">
                                 <article>
                                     <div className="d-flex justify-content-center align-items-center" style={{background: "#BAC095", borderRadius: "12px", height: "clamp(8rem, 22vw, 16rem)", width: "clamp(8rem, 22vw, 16rem)"}}>
-                                        <img src={vestido2} alt="" style={{height: "clamp(5rem, 15vw, 10rem)"}} />
+                                        <img src={vestido2} alt="" className="dress_code_img"/>
                                     </div>
                                 </article>
                                 <article>
                                     <div className="d-flex justify-content-center align-items-center" style={{background: "#D9D9D9", borderRadius: "12px", height: "clamp(8rem, 22vw, 16rem)", width: "clamp(8rem, 22vw, 16rem)"}}>
-                                        <img src={traje} alt="" style={{height: "clamp(5rem, 15vw, 10rem)"}} />
+                                        <img src={traje} alt="" className="dress_code_img" />
                                     </div>
                                 </article>
                             </section>
@@ -468,15 +463,15 @@ export default function IsaiLupita () {
                                     <div className="card_title_deco position-relative">
                                         <h3 className="section_title font_great_vibes color_p4 mb-0">Regalos</h3>
                                     </div>
-                                </div> 
+                                </div>
                                 <div className="text-white text-center position-relative">
                                     <p className="position-relative z-1">(Lluvia de sobres)</p>
                                     <div className="card_body">
                                         <p className="position-relative z-1">Nos sentimos bendecidos de tener familiares y amigos como tú, si estás pensando en un regalo, cualquier contribución económica que puedas hacer nos ayudará, tu generosidad será recordada con gratitud.</p>
                                     </div>
                                     <div className="position-absolute" style={{top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: "0"}}>
-                                        <img src={regalo} alt="" className="opacity-25" style={{width: "clamp(15.75rem, 47.25vw, 31.5rem)"}} />
-                                    </div>                    
+                                        <img src={regalo} alt="Decoración regalo" className="img_gift opacity-25" />
+                                    </div>
                                 </div>
                             </div>
                         </div> 

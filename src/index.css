@@ -145,6 +145,10 @@ p {
   color: var(--colorpalette4);
 }
 
+.bg_p3 {
+  background-color: var(--colorpalette3);
+}
+
 .font_great_vibes, .font_lustria {
   font-weight: 400;
   font-style: normal;
@@ -307,6 +311,14 @@ p {
   to {
     background-position: 500%;
   }
+}
+
+.full_screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero_quote {
@@ -484,6 +496,10 @@ p {
   font-size: clamp(1rem, 3vw, 2rem);
 }
 
+.date_day {
+  font-size: clamp(4rem, 10vw, 8rem);
+}
+
 .mb_1 {
   margin-bottom: clamp(.25rem, .75vw, .5rem);
 }
@@ -495,6 +511,30 @@ p {
   padding: clamp(1rem, 3vw, 2rem); 
   font-size: clamp(1rem, 3vw, 2rem); 
   color: #3d4127;
+}
+
+.img_flower {
+  width: clamp(6rem, 18vw, 12rem);
+}
+
+.img_shoes {
+  width: clamp(7.5625rem, 22.6875vw, 15.125rem);
+}
+
+.img_dress {
+  width: clamp(5.125rem, 15.375vw, 10.250rem);
+}
+
+.img_gift {
+  width: clamp(15.75rem, 47.25vw, 31.5rem);
+}
+
+.dress_code_img {
+  height: clamp(5rem, 15vw, 10rem);
+}
+
+.flip_horizontal {
+  transform: scaleX(-1);
 }
 
 @media (min-width: 768px) {
