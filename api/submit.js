@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     const sheet = doc.sheetsByIndex[0];
 
     await sheet.addRow({
-      Date: new Date().toISOString(),
+      Date: new Date(),
       Name: fullName,
       Confirmation: confirmation,
       Guests: guests,
