@@ -13,7 +13,7 @@ import img3 from "../../assets/img/invitaciones/isaiylupita/dsc0127.JPG"
 import img4 from "../../assets/img/invitaciones/isaiylupita/dsc0207.JPG"
 import img5 from "../../assets/img/invitaciones/isaiylupita/dsc0264.JPG"
 import img6 from "../../assets/img/invitaciones/isaiylupita/img3323.jpg"
-import img7 from "../../assets/img/invitaciones/isaiylupita/dsc0100.jpg"
+import img7 from "../../assets/img/invitaciones/isaiylupita/dsc0100.JPG"
 import img8 from "../../assets/img/invitaciones/isaiylupita/dsc0001.jpeg"
 import img9 from "../../assets/img/invitaciones/isaiylupita/dsc0183.jpg"
 import iglesia from "../../assets/img/invitaciones/isaiylupita/iglesia.png"
@@ -92,7 +92,7 @@ export default function IsaiLupita () {
         audio.play().catch(err => console.log('No se pudo reproducir audio:', err))
     }
 
-  const { days, hours, minutes, seconds } = timeLeft;
+    const { days, hours, minutes, seconds } = timeLeft;
 
     return (
         <>
@@ -105,16 +105,10 @@ export default function IsaiLupita () {
                         <h2 className="font_great_vibes" style={{fontSize: "4rem", color: "#D4DE95"}}>Isaí y Lupita</h2>
                         <p className="text-white">Haz clic para abrir tu invitación</p>
                         <button
-                        onClick={abrirInvitacion}
-                        style={{
-                            background: "transparent",
-                            padding: '0.5rem 1rem',
-                            fontSize: '1rem',
-                            marginTop: '1rem',
-                            cursor: 'pointer',
-                        }}
+                            className="button_invitation"
+                            onClick={abrirInvitacion}
                         >
-                        <img src={sello} alt="Sello isai y lupita" style={{width: "96px"}} />
+                            <img src={sello} alt="Sello isai y lupita" style={{width: "96px"}} />
                         </button>
                     </div>
                 </div>
@@ -279,6 +273,9 @@ export default function IsaiLupita () {
                             </SwiperSlide>
                             <SwiperSlide lazy="true">
                                 <img src={img8} alt="" className="w-100" loading="lazy" />
+                            </SwiperSlide>
+                            <SwiperSlide lazy="true">
+                                <img src={img9} alt="" className="w-100" loading="lazy" />
                             </SwiperSlide>
                         </Swiper>                        
                     </section>

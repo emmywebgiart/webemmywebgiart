@@ -145,6 +145,31 @@ p {
   color: var(--colorpalette4);
 }
 
+.button_invitation {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  animation: animationScale 1s linear infinite;
+}
+
+@keyframes animationScale {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .bg_p3 {
   background-color: var(--colorpalette3);
 }
