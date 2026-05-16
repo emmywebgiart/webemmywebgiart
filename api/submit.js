@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { fullName, confirmation, guests, message } = req.body;
+    const { fullName, confirmation, message } = req.body;
 
     const serviceAccountAuth = new JWT({
       email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -33,7 +33,6 @@ export default async function handler(req, res) {
       }),
       Name: fullName,
       Confirmation: confirmation,
-      // Guests: guests,
       Message: message,
     });
 
