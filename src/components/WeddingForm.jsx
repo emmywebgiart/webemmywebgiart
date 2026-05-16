@@ -8,6 +8,7 @@ function WeddingForm() {
   const [status, setStatus] = useState("");
   const [confirmed, setConfirmed] = useState(false)
   const [confirmedName, setConfirmedName] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -40,6 +41,7 @@ function WeddingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
 
     try {
       const response = await fetch("/api/submit", {
@@ -50,7 +52,7 @@ function WeddingForm() {
         body: JSON.stringify({
           fullName,
           confirmation,
-          guests,
+          // guests,
           message,
         }),
       });
@@ -67,6 +69,7 @@ function WeddingForm() {
           msg = `¡Gracias por avisar, ${fullName}. Aunque no puedas asistir!`
         }
 
+        setIsLoading(false)
         setConfirmed(true)
         setStatus(msg);
 
@@ -81,6 +84,8 @@ function WeddingForm() {
     } catch (error) {
       console.error(error);
       setStatus("Error al enviar");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -144,7 +149,7 @@ function WeddingForm() {
             </div>            
           </div>
 
-          <div className="d-flex flex-column">
+          {/* <div className="d-flex flex-column">
             <label htmlFor="noInvitados" className="mb_1 fs_6">Número de invitados</label>
             <input
               id="noInvitados"
@@ -156,7 +161,7 @@ function WeddingForm() {
               required
               placeholder="Ingresa el número de invitados"
             />
-          </div>
+          </div> */}
 
           <div className="d-flex flex-column">
             <label htmlFor="message" className="mb_1 fs_6">Mensaje para los novios</label>
@@ -169,7 +174,15 @@ function WeddingForm() {
             />
           </div>
 
-          <button type="submit" className="button_general">Enviar</button>
+          <button
+            type="submit"
+            className={`button_general ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={isLoading}
+          >
+            {isLoading ? "Enviando..." : "Enviar"}
+          </button>
         </div>
       </div>
     </form>

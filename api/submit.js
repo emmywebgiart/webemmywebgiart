@@ -28,10 +28,12 @@ export default async function handler(req, res) {
     const sheet = doc.sheetsByIndex[0];
 
     await sheet.addRow({
-      Date: new Date(),
+      Date:  new Date().toLocaleString("es-MX", {
+        timeZone: "America/Mexico_City",
+      }),
       Name: fullName,
       Confirmation: confirmation,
-      Guests: guests,
+      // Guests: guests,
       Message: message,
     });
 
