@@ -189,11 +189,11 @@ function WeddingForm() {
     {confirmed ? (
       <div className="full_screen bg_p3 d-flex align-items-center justify-content-center">
         <div className="card_body">
-          <p className="text-center font_great_vibes color_p4" style={{fontSize: "clamp(3rem, 9vw, 6rem)"}}>¡Gracias {confirmedName} por confirmar tu asistencia!</p>
+          <p className="text-center font_great_vibes color_p4" style={{fontSize: "clamp(3rem, 9vw, 6rem)"}}>¡Gracias <strong>{confirmedName}</strong> por confirmar tu asistencia!</p>
           <p className="text-white text-center font_lustria" style={{fontSize: "clamp(1rem, 3vw, 2rem)"}}>Nos alegra mucho que nos acompañes en este día tan especial.</p>
         </div>    
       </div>
-     ) : null} 
+    ) : null}
     </>
   );
 }
