@@ -45,6 +45,7 @@ export default function IsaiLupita () {
     const innerBgRef = useRef(null)
     const [isContainerOpen, setContainerOpen] = useState(false)
     const [isInnerOpen, setInnerOpen] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -76,8 +77,10 @@ export default function IsaiLupita () {
 
             if (document.hidden) {
                 audio.pause()
+                setIsPlaying(false)
             } else {
                 audio.play().catch(() => {})
+                setIsPlaying(true)
             }
         }
 
@@ -95,6 +98,7 @@ export default function IsaiLupita () {
 
         setTimeout(() => {
             setOverlayVisible(false)
+            setIsPlaying(true)
             const audio = audioRef.current
             audio.muted = false
             audio.play().catch((err) => console.log("No se pudo reproducir audio:", err))
@@ -102,6 +106,19 @@ export default function IsaiLupita () {
     };
 
     const { days, hours, minutes, seconds } = timeLeft;
+
+    const toggleAudio = () => {
+        const audio = audioRef.current;
+        if (!audio) return
+
+        if (isPlaying) {
+            audio.pause()
+            setIsPlaying(false)
+        } else {
+            audio.play().catch(() => {})
+            setIsPlaying(true)
+        }
+    }
 
     return (
         <>
@@ -131,6 +148,15 @@ export default function IsaiLupita () {
 
             {!overlayVisible && (
                 <>
+                    <button className="sound_button z_4 grid-center" onClick={toggleAudio}>
+                    <div className={`sound_equalizer ${isPlaying ? "playing" : ""}`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    </button>
                     <section className="section_hero" style={{backgroundImage: `url(${imgPrincipal})`}}>
                         <div className="hero_content position-relative d-flex flex-column">
                             <div className="hero_title_container text-center">

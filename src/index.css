@@ -118,6 +118,8 @@ code {
   --colorpalette4: #D4DE95;
   --colorwhite: #fff;
   --colorwhitergb: 255 255 255;
+  --colorpallete2rgb: 67 112 87;
+  --colorpallete3rgb: 119 136 115;
 }
 
 body {
@@ -127,6 +129,7 @@ body {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 button:focus:not(:focus-visible) {
@@ -470,7 +473,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 
 .hero_quote {
@@ -691,6 +694,73 @@ p {
 
 .flip_horizontal {
   transform: scaleX(-1);
+}
+
+.sound_button {
+  padding: 10px;
+  position: fixed;
+  bottom: 16px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  height: 48px; 
+  width: 48px; 
+  background: rgb(var(--colorpallete3rgb) / 80%); 
+  border-radius: 50%;
+}
+
+.sound_equalizer {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  height: 24px;
+}
+
+.sound_equalizer:not(.playing) {
+  height: 0;
+}
+
+.sound_equalizer span {
+  width: 3px;
+  height: 6px;
+  background: var(--colorpalette4);
+  border-radius: 2px;
+  display: block;
+}
+
+.sound_equalizer.playing span {
+  animation: soundBars 1s infinite ease-in-out;
+}
+
+.sound_equalizer.playing span:nth-child(1) {
+  animation-delay: 0s;
+}
+.sound_equalizer.playing span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.sound_equalizer.playing span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.sound_equalizer.playing span:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.sound_equalizer.playing span:nth-child(5) {
+  animation-delay: 0s;
+}
+
+@keyframes soundBars {
+  0% {
+    height: 6px;
+  }
+  50% {
+    height: 20px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+
+.z_4 {
+  z-index: 4;
 }
 
 @media (min-width: 768px) {
