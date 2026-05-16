@@ -41,6 +41,10 @@ export default function IsaiLupita () {
     const swiperRef = useRef(null);
     const audioRef = useRef(null)
     const [overlayVisible, setOverlayVisible] = useState(true)
+    const containerRef = useRef(null)
+    const innerBgRef = useRef(null)
+    const [isContainerOpen, setContainerOpen] = useState(false)
+    const [isInnerOpen, setInnerOpen] = useState(false)
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -85,12 +89,17 @@ export default function IsaiLupita () {
     }, []);
 
     const abrirInvitacion = () => {
-        setOverlayVisible(false)
+        setContainerOpen(true)
 
-        const audio = audioRef.current
-        audio.muted = false
-        audio.play().catch(err => console.log('No se pudo reproducir audio:', err))
-    }
+        setTimeout(() => setInnerOpen(true), 300)
+
+        setTimeout(() => {
+            setOverlayVisible(false)
+            const audio = audioRef.current
+            audio.muted = false
+            audio.play().catch((err) => console.log("No se pudo reproducir audio:", err))
+        }, 1300)
+    };
 
     const { days, hours, minutes, seconds } = timeLeft;
 
@@ -100,16 +109,22 @@ export default function IsaiLupita () {
             <audio ref={audioRef} src={audio} loop hidden />
 
             {overlayVisible && (
-                <div className="full_screen bg_p3 d-flex justify-content-center align-items-center">
-                    <div className="text-center">
-                        <h2 className="font_great_vibes" style={{fontSize: "4rem", color: "#D4DE95"}}>Isaí y Lupita</h2>
-                        <p className="text-white">Haz clic para abrir tu invitación</p>
-                        <button
-                            className="button_invitation"
-                            onClick={abrirInvitacion}
-                        >
-                            <img src={sello} alt="Sello isai y lupita" style={{width: "96px"}} />
-                        </button>
+                <div className="full_screen bg_p3 grid_center">
+                    <div
+                        ref={containerRef}
+                        className={`invitation_container d-flex justify-content-center align-items-center ${isContainerOpen ? 'open' : ''}`}
+                    >
+                        <div
+                            ref={innerBgRef}
+                            className={`inner_background ${isInnerOpen ? 'open' : ''}`}
+                        ></div>
+                        <div className="position-relative text-center z-2">
+                            <h2 className="invitation_title font_great_vibes color_p4">Isaí y Lupita</h2>
+                            <p className="text-white">Haz clic para abrir tu invitación</p>
+                            <button className="button_invitation" onClick={abrirInvitacion}>
+                                <img src={sello} alt="Sello Isai y Lupita" className="img_invitation_seal" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}
