@@ -336,7 +336,7 @@ export default function IsaiLupita () {
                             </article>
                         </section>
                         <div className="position-relative d-flex justify-content-center">
-                            <a href="https://www.google.com/maps/place/Iglesia+Jesus+Nazareno/@19.7107036,-99.7879141,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25dbeb19eb7e9:0x6d40fd1a4c63e07f!8m2!3d19.7107036!4d-99.7853392!16s%2Fg%2F11b6bv1zng?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="button_general">Ver ubicacion en Google Maps</a>
+                            <a href="https://www.google.com/maps/place/Iglesia+Jesus+Nazareno/@19.7107036,-99.7879141,17z/data=!3m1!4b1!4m6!3m5!1s0x85d25dbeb19eb7e9:0x6d40fd1a4c63e07f!8m2!3d19.7107036!4d-99.7853392!16s%2Fg%2F11b6bv1zng?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="button_general">Ver ubicación en Google Maps</a>
                         </div>
                     </section>
                     <section className="section_decoration position-relative">
