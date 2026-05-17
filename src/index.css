@@ -666,6 +666,12 @@ p {
   padding: clamp(1rem, 3vw, 2rem); 
   font-size: clamp(1rem, 3vw, 2rem); 
   color: #3d4127;
+  transition: .3s;
+}
+
+.form_input:focus {
+  box-shadow: 0 0 0 2px var(--colorpalette3);
+  outline: none;
 }
 
 .img_invitation_seal {
@@ -757,6 +763,63 @@ p {
   100% {
     height: 6px;
   }
+}
+
+.confirmation_container {
+  width: 100%;
+}
+
+.confirm_card {
+  border-radius: 14px;
+  border: 2px solid rgb(var(--colorpallete3rgb) / 30%);
+  background: var(--colorwhite);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.confirm_card input {
+  display: none;
+}
+
+.radio_circle {
+  width: clamp(1.5rem, 4.5vw, 3rem);
+  height: clamp(1.5rem, 4.5vw, 3rem);
+  border-radius: 50%;
+  border: 2px solid var(--colorpalette3);
+  transition: all 0.3s ease;
+}
+
+.radio_circle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(1rem, 3vw, 2rem);
+  height: clamp(1rem, 3vw, 2rem);
+  background: var(--colorpalette3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.25s ease;
+}
+
+.confirm_card.active {
+  border-color: var(--colorpalette3);
+  background: rgb(var(--colorpallete3rgb) / 15%);
+  transform: scale(1.03);
+}
+
+.confirm_card.active .radio_circle {
+  border-color: var(--colorpalette2);
+}
+
+.confirm_card.active .radio_circle::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.confirm_card:hover {
+  transform: scale(1.03);
 }
 
 .z_4 {

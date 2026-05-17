@@ -3,41 +3,10 @@ import React, { useState, useEffect } from "react";
 function WeddingForm() {
   const [fullName, setFullName] = useState("");
   const [confirmation, setConfirmation] = useState("");
-  const [guests, setGuests] = useState(1);
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
   const [confirmed, setConfirmed] = useState(false)
   const [confirmedName, setConfirmedName] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const data = { fullName, confirmation, guests, message };
-
-  //   try {
-  //   //   const response = await fetch("http://localhost:5000/rsvp", {
-  //       const response = await fetch("https://script.google.com/macros/s/AKfycbyJOFiCqWufkCuk6vvQePJywZxNq8DBlDYnpfvOCCyr6mSe5GBGvs-kvbqvwYBrGyQA/exec", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(data),
-  //       });
-
-  //     const result = await response.json()
-  //     if (result.result === "success") {
-  //       setStatus("Formulario enviado correctamente")
-  //       setFullName("")
-  //       setConfirmation("")
-  //       setGuests(1)
-  //       setMessage("")
-  //     } else {
-  //       setStatus("Error al enviar el formulario")
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //     setStatus("Error al enviar el formulario")
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +21,6 @@ function WeddingForm() {
         body: JSON.stringify({
           fullName,
           confirmation,
-          // guests,
           message,
         }),
       });
@@ -62,28 +30,16 @@ function WeddingForm() {
       if (data.success) {
         setConfirmedName(fullName)
 
-        let msg
-        if (confirmation.toLowerCase() === "sí") {
-          msg = `¡Gracias ${fullName} por confirmar tu asistencia! Nos alegra que nos acompañes. ¡Te esperamos!`
-        } else {
-          msg = `¡Gracias por avisar, ${fullName}. Aunque no puedas asistir!`
-        }
-
         setIsLoading(false)
         setConfirmed(true)
-        setStatus(msg);
 
         setFullName("");
         setConfirmation("");
-        setGuests(1);
         setMessage("");
-      } else {
-        setStatus("Error: " + data.message);
       }
 
     } catch (error) {
       console.error(error);
-      setStatus("Error al enviar");
     } finally {
       setIsLoading(false);
     }
@@ -91,10 +47,10 @@ function WeddingForm() {
 
   useEffect(() => {
     if (confirmed) {
-      const timer = setTimeout(() => setConfirmed(false), 3000);
+      const timer = setTimeout(() => setConfirmed(false), 3000)
       return () => clearTimeout(timer)
     }
-  }, [confirmed]);
+  }, [confirmed])
 
   return (
     <>
@@ -117,51 +73,39 @@ function WeddingForm() {
               placeholder="Ingresa tu nombre completo"
             />
           </div>
-
-          <div className="d-flex flex-column">
+          
+          <div className="confirmation_container d-flex flex-column">
             <p className="mb_1 fs_6">Confirmación</p>
             <div className="row">
               <div className="col-6">
-                <label className="fs_6">
+                <label className={`confirm_card d-flex justify-content-center align-items-center flex-column gap_2 ${confirmation === "Sí" ? "active" : ""}`}>
                   <input
                     type="radio"
                     name="confirmation"
                     value="Sí"
                     checked={confirmation === "Sí"}
                     onChange={(e) => setConfirmation(e.target.value)}
-                    required
                   />
-                  Sí asistiré
+                  <span className="radio_circle position-relative"></span>
+                  <p className="text-center fw-bold mb-0">Sí asistiré</p>
                 </label>
               </div>
+
               <div className="col-6">
-                <label className="fs_6">
-                  <input                  
+                <label className={`confirm_card d-flex justify-content-center align-items-center flex-column gap_2 ${confirmation === "No" ? "active" : ""}`}>
+                  <input
                     type="radio"
                     name="confirmation"
                     value="No"
                     checked={confirmation === "No"}
                     onChange={(e) => setConfirmation(e.target.value)}
                   />
-                  No asistiré
+                  <span className="radio_circle position-relative"></span>
+                  <p className="text-center fw-bold mb-0">No asistiré</p>
                 </label>
               </div>
-            </div>            
+            </div>
           </div>
-
-          {/* <div className="d-flex flex-column">
-            <label htmlFor="noInvitados" className="mb_1 fs_6">Número de invitados</label>
-            <input
-              id="noInvitados"
-              className="form_input"
-              type="number"
-              min="0"
-              value={guests}
-              onChange={(e) => setGuests(e.target.value)}
-              required
-              placeholder="Ingresa el número de invitados"
-            />
-          </div> */}
 
           <div className="d-flex flex-column">
             <label htmlFor="message" className="mb_1 fs_6">Mensaje para los novios</label>
