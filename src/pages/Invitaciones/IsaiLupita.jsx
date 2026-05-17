@@ -365,7 +365,7 @@ export default function IsaiLupita () {
                         <section className="position-relative text-center">
                             <article>
                                 <p className="mb-0">Salón</p>
-                                <p className="fw-bolder fs_4">"Faty"</p>
+                                <p className="fw-bolder fs_4" translate="no">"Faty"</p>
                             </article>
                             <article>
                                 <p className="mb-0">Jocotitlán, Estado de México</p>
