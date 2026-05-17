@@ -73,7 +73,7 @@ function WeddingForm() {
               placeholder="Ingresa tu nombre completo"
             />
           </div>
-          
+
           <div className="confirmation_container d-flex flex-column">
             <p className="mb_1 fs_6">Confirmación</p>
             <div className="row">
@@ -85,6 +85,7 @@ function WeddingForm() {
                     value="Sí"
                     checked={confirmation === "Sí"}
                     onChange={(e) => setConfirmation(e.target.value)}
+                    required
                   />
                   <span className="radio_circle position-relative"></span>
                   <p className="text-center fw-bold mb-0">Sí asistiré</p>
