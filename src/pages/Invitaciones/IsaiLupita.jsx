@@ -158,7 +158,7 @@ export default function IsaiLupita () {
                         </div>
                     </button>
                     <motion.section 
-                        className="section_hero" 
+                        className="section_hero overflow-hidden" 
                         // style={{backgroundImage: `url(${imgPrincipal})`}}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -167,8 +167,8 @@ export default function IsaiLupita () {
                         <motion.img
                             src={imgPrincipal}
                             className="hero_bg_img"
-                            initial={{ scale: 1.15, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
+                            initial={{ scale: 1, opacity: 0 }}
+                            animate={{ scale: 1.2, opacity: 1 }}
                             transition={{ duration: 2.5, ease: "easeOut" }}
                         />
                         <motion.div 
