@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 function WeddingForm() {
   const [fullName, setFullName] = useState("")
@@ -86,11 +87,24 @@ function WeddingForm() {
 
   return (
     <>
-      <div className="section_general_title_container">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.88, y: 12 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{
+            once: false,
+            amount: 0.5
+        }}
+        transition={{
+            duration: 0.7,
+            delay: 0.25,
+            ease: [0.22, 1, 0.36, 1]
+        }}
+        className="section_general_title_container"
+      >
         <h3 className="section_title_green text-center font_great_vibes">
           Confirma tu asistencia
         </h3>
-      </div>
+      </motion.div>
 
       <form onSubmit={handleSubmit} className="card_border border_p3">
         <div className="card_body">

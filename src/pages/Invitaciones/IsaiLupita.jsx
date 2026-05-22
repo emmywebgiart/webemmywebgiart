@@ -206,9 +206,22 @@ export default function IsaiLupita () {
                         </motion.div>
                     </motion.section>
                     <section className="section">
-                        <div className="section_general_title_container">
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{
+                                once: false,
+                                amount: 0.5
+                            }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.25,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            className="section_general_title_container"
+                        >
                             <h3 className="section_title_green text-center font_great_vibes">Save the date</h3>
-                        </div>
+                        </motion.div>
                         <div className="d-flex flex-column gap_2">
                             <div className="d-flex justify-content-between align-items-center">
                                 <img src={flor1} alt="Decoración flor" className="img_flower" />
@@ -357,9 +370,22 @@ export default function IsaiLupita () {
                     </section>
                     <section className="section position-relative">
                         <img src={iglesia} alt="" className="section_bg_img" />
-                        <div className="section_general_title_container position-relative">
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{
+                                once: false,
+                                amount: 0.5
+                            }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.25,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            className="section_general_title_container position-relative"
+                        >
                             <h3 className="section_title_green text-center font_great_vibes">Ceremonia religiosa</h3>
-                        </div>
+                        </motion.div>
                         <section className="position-relative text-center">
                             <article>
                                 <p className="mb-0">Iglesia católica</p>
@@ -394,9 +420,22 @@ export default function IsaiLupita () {
                     </section>
                     <section className="section position-relative">
                         <img src={salon} alt="" className="section_bg_img" />
-                        <div className="section_general_title_container position-relative">
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{
+                                once: false,
+                                amount: 0.5
+                            }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.25,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            className="section_general_title_container position-relative"
+                        >
                             <h3 className="section_title_green text-center font_great_vibes">Ceremonia civil y recepción</h3>
-                        </div>
+                        </motion.div>
                         <section className="position-relative text-center">
                             <article>
                                 <p className="mb-0">Salón</p>
@@ -506,9 +545,22 @@ export default function IsaiLupita () {
                         </div>
                     </section>
                     <section className="section">
-                        <div className="section_general_title_container">
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{
+                                once: false,
+                                amount: 0.5
+                            }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.25,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            className="section_general_title_container"
+                        >
                             <h3 className="section_title_green text-center font_great_vibes">Código de vestimenta</h3>
-                        </div>
+                        </motion.div>
                         <div className="d-flex flex-column gap_3">
                             <section className="d-flex justify-content-center gap_4">
                                 <article>
