@@ -26,7 +26,7 @@ import sello from "../../assets/img/invitaciones/isaiylupita/sellolacre.png"
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import { clamp } from "motion";
+import { motion } from "motion/react";
 
 export default function IsaiLupita () {
     const targetDate = new Date("2026-08-29T00:00:00");
@@ -149,27 +149,62 @@ export default function IsaiLupita () {
             {!overlayVisible && (
                 <>
                     <button className="sound_button z_4 grid-center" onClick={toggleAudio}>
-                    <div className={`sound_equalizer ${isPlaying ? "playing" : ""}`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    </button>
-                    <section className="section_hero" style={{backgroundImage: `url(${imgPrincipal})`}}>
-                        <div className="hero_content position-relative d-flex flex-column">
-                            <div className="hero_title_container text-center">
-                                <h1 className="hero_title font_great_vibes d-inline-block mb-0">Nuestra Boda</h1>
-                            </div>
-                            <div className="text-center">
-                                <h2 className="hero_names font_lustria">Isaí y Lupita</h2>
-                                <div className="hero_quote">
-                                    <p className="hero_quote_text font_lustria text-white mb-0">"Lo que se cuida y se pone en manos de Dios, dura toda la vida"</p>
-                                </div>
-                            </div>
+                        <div className={`sound_equalizer ${isPlaying ? "playing" : ""}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
-                    </section>
+                    </button>
+                    <motion.section 
+                        className="section_hero" 
+                        // style={{backgroundImage: `url(${imgPrincipal})`}}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.2 }}
+                    >
+                        <motion.img
+                            src={imgPrincipal}
+                            className="hero_bg_img"
+                            initial={{ scale: 1.15, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 2.5, ease: "easeOut" }}
+                        />
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1.2 }}
+                            className="hero_content position-relative d-flex flex-column"
+                        >
+                            <motion.div 
+                                className="hero_title_container text-center position-relative z-1"
+                                initial={{ y: 30, opacity: 0, scale: 0.98 }}
+                                animate={{ y: 0, opacity: 1, scale: 1 }}
+                                transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                            >
+                                <h1 className="hero_title font_great_vibes d-inline-block mb-0">Nuestra Boda</h1>
+                            </motion.div>
+                            <motion.div 
+                                initial={{ y: 25, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1.2, ease: "easeOut", delay: 0.6 }}
+                                className="text-center position-relative z-1"
+                            >
+                                <h2 className="hero_names font_lustria">Isaí y Lupita</h2>
+                                <motion.div
+                                    className="hero_quote"
+                                    initial={{ opacity: 0, scale: 0.98 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 1.2, delay: 1 }}
+                                >
+                                    <p className="hero_quote_text font_lustria text-white mb-0">
+                                        "Lo que se cuida y se pone en manos de Dios, dura toda la vida"
+                                    </p>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
+                    </motion.section>
                     <section className="section">
                         <div className="section_general_title_container">
                             <h3 className="section_title_green text-center font_great_vibes">Save the date</h3>
