@@ -209,7 +209,7 @@ function WeddingForm() {
             >
               ¡Gracias por confirmar tu asistencia!
             </p>
-            <p className="text-white text-center font_lustria fs_4"><strong>{confirmedName}Emmanuel Angeles Marcos</strong></p>
+            <p className="text-white text-center font_lustria fs_4"><strong>{confirmedName}</strong></p>
             <p className="text-white text-center font_lustria fs_6">
               Nos alegra mucho que nos acompañes en este día tan especial.
             </p>
