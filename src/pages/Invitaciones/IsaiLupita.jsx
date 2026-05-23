@@ -210,7 +210,7 @@ export default function IsaiLupita () {
                             initial={{ opacity: 0, scale: 0.88, y: 12 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{
-                                once: false,
+                                once: true,
                                 amount: 0.5
                             }}
                             transition={{
@@ -283,7 +283,22 @@ export default function IsaiLupita () {
                         <div className="section_photo_overlay">
                             <div className="photo_section_card_blur photo_frase_container">
                                 <div className="photo_card_blur">
-                                    <p className="position-relative text-center color_p1">¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!</p>
+                                    <motion.p 
+                                        initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                        viewport={{
+                                            once: true,
+                                            amount: 0.5
+                                        }}
+                                        transition={{
+                                            duration: 0.7,
+                                            delay: 0.25,
+                                            ease: [0.22, 1, 0.36, 1]
+                                        }}
+                                        className="position-relative text-center color_p1"
+                                    >
+                                        ¡Ha llegado el momento de unir nuestras vidas en matrimonio y queremos que estés presente en este día tan especial que tanto hemos soñado!
+                                    </motion.p>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +308,22 @@ export default function IsaiLupita () {
                             <div className="card_body_pb_deco">
                                 <div className="section_decoration_title_container text-center">
                                     <div className="card_title_deco position-relative">
-                                        <h3 className="section_title font_great_vibes color_p4 mb-0">Con la bendición de Dios y de nuestros padres</h3>
+                                        <motion.h3 
+                                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.5
+                                            }}
+                                            transition={{
+                                                duration: 0.7,
+                                                delay: 0.25,
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            className="section_title font_great_vibes color_p4 mb-0"
+                                        >
+                                            Con la bendición de Dios y de nuestros padres
+                                        </motion.h3>
                                     </div>
                                 </div>
                                 <section className="d-flex flex-column gap_7">
@@ -325,8 +355,27 @@ export default function IsaiLupita () {
                             </div>                            
                         </div>
                         <div className="flowers_separator_container position-absolute pe-none z-3">
-                            <img src={flores} alt="Separador flores" />
-                        </div> 
+                            <motion.img
+                                src={flores}
+                                alt="Separador flores"
+                                className="img-fluid float_animation"
+                                initial={{
+                                    opacity: 0,
+                                    y: 60,
+                                    scale: 0.95,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1,
+                                }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{
+                                    duration: 1,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                            />
+                        </div>
                     </section>
                     <section className="section_album">
                         <Swiper
@@ -374,7 +423,7 @@ export default function IsaiLupita () {
                             initial={{ opacity: 0, scale: 0.88, y: 12 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{
-                                once: false,
+                                once: true,
                                 amount: 0.5
                             }}
                             transition={{
@@ -405,7 +454,22 @@ export default function IsaiLupita () {
                             <div className="card_body_pb_deco">             
                                 <div className="section_decoration_title_container text-center">
                                     <div className="card_title_deco position-relative">
-                                        <h3 className="section_title font_great_vibes color_p4 mb-0">Nuestros padrinos</h3>
+                                        <motion.h3 
+                                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.5
+                                            }}
+                                            transition={{
+                                                duration: 0.7,
+                                                delay: 0.25,
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            className="section_title font_great_vibes color_p4 mb-0"
+                                        >
+                                            Nuestros padrinos
+                                        </motion.h3>
                                     </div>
                                 </div>      
                                 <article className="text-white text-center">
@@ -415,7 +479,26 @@ export default function IsaiLupita () {
                             </div>  
                         </div>
                         <div className="flowers_separator_container position-absolute">
-                            <img src={flores} alt="Separador flores" />
+                            <motion.img
+                                src={flores}
+                                alt="Separador flores"
+                                className="img-fluid float_animation"
+                                initial={{
+                                    opacity: 0,
+                                    y: 60,
+                                    scale: 0.95,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1,
+                                }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{
+                                    duration: 1,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                            />
                         </div>
                     </section>
                     <section className="section position-relative">
@@ -424,7 +507,7 @@ export default function IsaiLupita () {
                             initial={{ opacity: 0, scale: 0.88, y: 12 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{
-                                once: false,
+                                once: true,
                                 amount: 0.5
                             }}
                             transition={{
@@ -455,7 +538,22 @@ export default function IsaiLupita () {
                             <div className="card_body_pb_deco">
                                 <div className="section_decoration_title_container text-center">
                                     <div className="card_title_deco position-relative">
-                                        <h3 className="section_title font_great_vibes color_p4 mb-0">Itinerario</h3>
+                                        <motion.h3 
+                                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.5
+                                            }}
+                                            transition={{
+                                                duration: 0.7,
+                                                delay: 0.25,
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            className="section_title font_great_vibes color_p4 mb-0"
+                                        >
+                                            Itinerario
+                                        </motion.h3>
                                     </div>
                                 </div>
                                 <div className="card_body">
@@ -541,7 +639,26 @@ export default function IsaiLupita () {
                             </div>
                         </div>
                         <div className="flowers_separator_container position-absolute">
-                            <img src={flores} alt="Separador flores" />
+                            <motion.img
+                                src={flores}
+                                alt="Separador flores"
+                                className="img-fluid float_animation"
+                                initial={{
+                                    opacity: 0,
+                                    y: 60,
+                                    scale: 0.95,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1,
+                                }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{
+                                    duration: 1,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                            />
                         </div>
                     </section>
                     <section className="section">
@@ -549,7 +666,7 @@ export default function IsaiLupita () {
                             initial={{ opacity: 0, scale: 0.88, y: 12 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{
-                                once: false,
+                                once: true,
                                 amount: 0.5
                             }}
                             transition={{
@@ -586,7 +703,22 @@ export default function IsaiLupita () {
                             <div className="card_body_pb_deco">
                                 <div className="section_decoration_title_container text-center">
                                     <div className="card_title_deco position-relative">
-                                        <h3 className="section_title font_great_vibes color_p4 mb-0">Regalos</h3>
+                                        <motion.h3 
+                                            initial={{ opacity: 0, scale: 0.88, y: 12 }}
+                                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.5
+                                            }}
+                                            transition={{
+                                                duration: 0.7,
+                                                delay: 0.25,
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            className="section_title font_great_vibes color_p4 mb-0"
+                                        >
+                                            Regalos
+                                        </motion.h3>
                                     </div>
                                 </div>
                                 <div className="text-white text-center position-relative">
@@ -601,8 +733,27 @@ export default function IsaiLupita () {
                             </div>
                         </div> 
                         <div className="flowers_separator_container position-absolute">
-                            <img src={flores} alt="Separador flores" />
-                        </div>       
+                            <motion.img
+                                src={flores}
+                                alt="Separador flores"
+                                className="img-fluid float_animation"
+                                initial={{
+                                    opacity: 0,
+                                    y: 60,
+                                    scale: 0.95,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1,
+                                }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{
+                                    duration: 1,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                            />
+                        </div>      
                     </section>
                     <section className="section">
                         <WeddingForm />

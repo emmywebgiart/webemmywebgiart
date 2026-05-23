@@ -91,7 +91,7 @@ function WeddingForm() {
         initial={{ opacity: 0, scale: 0.88, y: 12 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{
-            once: false,
+            once: true,
             amount: 0.5
         }}
         transition={{
@@ -205,14 +205,12 @@ function WeddingForm() {
           <div className="card_body">
             <p
               className="text-center font_great_vibes color_p4"
-              style={{ fontSize: "clamp(3rem, 9vw, 6rem)" }}
+              style={{ fontSize: "clamp(2rem, 6vw, 4rem)" }}
             >
-              ¡Gracias <strong>{confirmedName}</strong> por confirmar tu asistencia!
+              ¡Gracias por confirmar tu asistencia!
             </p>
-            <p
-              className="text-white text-center font_lustria"
-              style={{ fontSize: "clamp(1rem, 3vw, 2rem)" }}
-            >
+            <p className="text-white text-center font_lustria fs_4"><strong>{confirmedName}Emmanuel Angeles Marcos</strong></p>
+            <p className="text-white text-center font_lustria fs_6">
               Nos alegra mucho que nos acompañes en este día tan especial.
             </p>
           </div>
